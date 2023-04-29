@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Insecure Target</string>
+<!--    Main Activity   -->
+    <string name="unencrypted_btn"> Unencrypted Database</string>
+    <string name="encrypted_btn"> Encrypted Database</string>
+<!--    Database Activity   -->
+    <string name="unencrypted_db_title"><u>Unencrypted DB</u></string>
+    <string name="encrypted_db_title"><u>Encrypted DB</u></string>
+    <string name="hintText">Enter User Name</string>
+    <string name="heading">Content Provider In Android</string>
+    <string name="insertButtontext">Insert Data</string>
+    <string name="loadButtonText">Load Data</string>
+</resources>

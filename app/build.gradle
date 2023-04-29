@@ -1,0 +1,78 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 32
+
+    //To resolve dimension issue
+    flavorDimensions "default"
+
+    defaultConfig {
+        applicationId "sg.insecure.insecuretarget"
+        minSdk 29
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags ''
+            }
+        }
+    }
+
+    signingConfigs {
+        release{
+            storeFile file('insecureapp_keystore.jks')
+            storePassword "P@ssw0rd"
+            keyAlias "key0"
+            keyPassword "P@ssw0rd"
+
+            v1SigningEnabled true
+            v2SigningEnabled true
+
+        }
+    }
+
+    buildTypes {
+        debug{
+            applicationIdSuffix ".debug"
+            buildConfigField 'String', 'ENC_DB_NAME', "\"encryptedDatabase.db\""
+        }
+        release {
+            applicationIdSuffix ".release"
+            buildConfigField 'String', 'ENC_DB_NAME', "\"encryptedDatabase.db\""
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+            version '3.22.1'
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation "net.zetetic:android-database-sqlcipher:4.5.3"
+    implementation "androidx.sqlite:sqlite:2.1.0"
+
+}

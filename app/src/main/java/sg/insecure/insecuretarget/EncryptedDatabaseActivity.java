@@ -1,0 +1,84 @@
+package sg.insecure.insecuretarget;
+
+
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import net.sqlcipher.database.SQLiteDatabase;
+
+import sg.insecure.insecuretarget.database.EncryptedDataProvider;
+
+public class EncryptedDatabaseActivity extends AppCompatActivity {
+
+    private SQLiteDatabase database;
+    private static final String TAG = "EncryptedDatabaseActivity";
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_encrypted_database);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        return true;
+    }
+
+    public void onClickAddDetails(View view) {
+        EditText input = findViewById(R.id.textName);
+        // class to add values in the database
+        ContentValues values = new ContentValues();
+
+        // fetching text from user
+        values.put(EncryptedDataProvider.name, input.getText().toString());
+
+        // inserting into database through content URI
+        getContentResolver().insert(EncryptedDataProvider.CONTENT_URI, values);
+
+        // displaying a toast message
+        Toast.makeText(getBaseContext(), "New Record Inserted", Toast.LENGTH_LONG).show();
+
+        //clear input text field
+        input.setText("");
+    }
+
+    @SuppressLint("Range")
+    public void onClickShowDetails(View view) {
+        // inserting complete table details in this text field
+        TextView resultView= (TextView) findViewById(R.id.res);
+
+        // creating a cursor object of the
+        // content URI
+        Cursor cursor = getContentResolver().query(Uri.parse("content://sg.insecure.target.data.provider.encrypted/users"), null, null, null, null);
+
+        // iteration of the cursor
+        // to print whole table
+        if(cursor.moveToFirst()) {
+            StringBuilder strBuild=new StringBuilder();
+            while (!cursor.isAfterLast()) {
+                strBuild.append("\n"+cursor.getString(cursor.getColumnIndex("id"))+ "-"+ cursor.getString(cursor.getColumnIndex("name")));
+                cursor.moveToNext();
+            }
+            cursor.close();
+            resultView.setText(strBuild);
+        }
+        else {
+            resultView.setText("No Records Found");
+        }
+    }
+}
