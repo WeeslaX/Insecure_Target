@@ -11,13 +11,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/main_activity_label"
+            android:textSize="35sp"
+            android:gravity="center"
+            tools:layout_editor_absoluteX="33dp"
+            tools:layout_editor_absoluteY="32dp" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -41,9 +56,23 @@
             android:layout_marginBottom="10dp"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:backgroundTint="@color/teal_200"
+            android:backgroundTint="@color/black"
             android:id="@+id/encrypted_db_btn"
             android:text="@string/encrypted_btn"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:backgroundTint="@color/purple_200"
+            android:id="@+id/aidl_service_btn"
+            android:text="@string/aidl_service_btn"
             />
 
     </LinearLayout>

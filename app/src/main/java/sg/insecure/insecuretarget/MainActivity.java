@@ -4,7 +4,6 @@ package sg.insecure.insecuretarget;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -25,8 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Runtime Permission Request
         ActivityCompat.requestPermissions(this, neededPermission, dangerousPermissionCode);
-
-        setContentView(R.layout.activity_main);
+       setContentView(R.layout.activity_main);
     }
 
     @Override
@@ -35,8 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
         /* Layout Control */
         // Buttons
-        Button unencryptedButton =findViewById(R.id.unencrypted_db_btn);
-        Button encryptedButton =findViewById(R.id.encrypted_db_btn);
+        Button unencryptedButton = findViewById(R.id.unencrypted_db_btn);
+        Button encryptedButton = findViewById(R.id.encrypted_db_btn);
+        Button aidlServiceButton = findViewById(R.id.aidl_service_btn);
 
         // Transition to unencrypted database activity
         unencryptedButton.setOnClickListener(view ->{
@@ -48,6 +47,15 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this, EncryptedDatabaseActivity.class));
         });
 
+        // Transition to AIDL Service activity
+        aidlServiceButton.setOnClickListener(view ->{
+            startActivity(new Intent(this, RemoteServiceActivity.class));
+        });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
 
     }
 }

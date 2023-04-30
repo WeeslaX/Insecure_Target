@@ -1,13 +1,19 @@
 <resources>
     <string name="app_name">Insecure Target</string>
 <!--    Main Activity   -->
-    <string name="unencrypted_btn"> Unencrypted Database</string>
-    <string name="encrypted_btn"> Encrypted Database</string>
-<!--    Database Activity   -->
+    <string name="main_activity_label"><u>Insecure Target Menu</u></string>
+    <string name="unencrypted_btn"> Unencrypted Database Control</string>
+    <string name="encrypted_btn"> Encrypted Database Control</string>
+    <string name="aidl_service_btn">AIDL Service Control</string>
+<!--    Database   -->
     <string name="unencrypted_db_title"><u>Unencrypted DB</u></string>
     <string name="encrypted_db_title"><u>Encrypted DB</u></string>
     <string name="hintText">Enter User Name</string>
     <string name="heading">Content Provider In Android</string>
     <string name="insertButtontext">Insert Data</string>
     <string name="loadButtonText">Load Data</string>
+<!--   AIDL Service    -->\
+    <string name="aidl_service_title"><u>AIDL Service Control</u></string>
+    <string name="randomise_getData_value">Randomise getData() value</string>
+    <string name="current_getData_value">Remote Service Data = Initial Data</string>
 </resources>

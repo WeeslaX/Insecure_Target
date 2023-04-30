@@ -28,7 +28,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -37,6 +36,9 @@
             android:exported="false" />
 
         <activity android:name=".EncryptedDatabaseActivity"
+            android:exported="false" />
+
+        <activity android:name=".RemoteServiceActivity"
             android:exported="false" />
 
         <provider
@@ -50,6 +52,11 @@
             android:authorities="sg.insecure.target.data.provider.encrypted"
             android:exported="true"
             android:readPermission="sg.insecure.target.data.provider.readPermission"
+            />
+
+        <service
+            android:name=".services.RemoteService"
+            android:exported="true"
             />
 
 

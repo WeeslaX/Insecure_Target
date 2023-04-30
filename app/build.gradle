@@ -38,11 +38,9 @@ android {
 
     buildTypes {
         debug{
-            applicationIdSuffix ".debug"
             buildConfigField 'String', 'ENC_DB_NAME', "\"encryptedDatabase.db\""
         }
         release {
-            applicationIdSuffix ".release"
             buildConfigField 'String', 'ENC_DB_NAME', "\"encryptedDatabase.db\""
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
