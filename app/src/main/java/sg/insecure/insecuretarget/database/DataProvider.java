@@ -7,7 +7,6 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 
@@ -24,11 +23,16 @@ public class DataProvider extends ContentProvider {
     // parsing the content URI
     public static final Uri CONTENT_URI = Uri.parse(URL);
 
+    static final String TABLE_NAME = "Users";
     private static final String id = "id";
     public static final String name = "name";
     private static final int uriCode = 1;
     private static final UriMatcher uriMatcher;
     private static HashMap<String, String> values;
+    private SQLiteDatabase db;
+
+    // declaring table name of the database
+
 
     static {
 
@@ -126,49 +130,6 @@ public class DataProvider extends ContentProvider {
         }
         getContext().getContentResolver().notifyChange(uri, null);
         return count;
-    }
-
-    // creating object of database
-    // to perform query
-    private SQLiteDatabase db;
-
-    // declaring name of the database
-    static final String DATABASE_NAME = "UserDB";
-
-    // declaring table name of the database
-    static final String TABLE_NAME = "Users";
-
-    // declaring version of the database
-    static final int DATABASE_VERSION = 1;
-
-    // sql query to create the table
-    static final String CREATE_DB_TABLE = " CREATE TABLE " + TABLE_NAME
-            + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + " name TEXT NOT NULL);";
-
-    // creating a database
-    private static class DatabaseHelper extends SQLiteOpenHelper {
-
-        // defining a constructor
-        DatabaseHelper(Context context) {
-            super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        }
-
-        // creating a table in the database
-        @Override
-        public void onCreate(SQLiteDatabase db) {
-
-            db.execSQL(CREATE_DB_TABLE);
-        }
-
-        @Override
-        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
-            // sql query to drop a table
-            // having similar name
-            db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-            onCreate(db);
-        }
     }
 
 }
