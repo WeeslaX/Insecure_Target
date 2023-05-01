@@ -3,10 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="sg.insecure.insecuretarget">
 
+    <!--  Custom Permissions  -->
     <permission
         android:name="sg.insecure.target.data.provider.readPermission"
         android:protectionLevel="normal"/>
-    
+
+    <!--  Android Permissions  -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />

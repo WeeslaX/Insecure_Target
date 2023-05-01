@@ -42,16 +42,44 @@
             android:layout_marginBottom="10dp"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/blue"
             android:id="@+id/aidl_randomise_getdata_value"
-            android:text="@string/randomise_getData_value"
+            android:text="@string/manual_randomise_getData_value"
             />
 
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:backgroundTint="@color/green"
+            android:id="@+id/aidl_auto_randomise_getdata_value_start"
+            android:text="@string/start_auto_randomise_getData_value"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:backgroundTint="@color/red"
+            android:id="@+id/aidl_auto_randomise_getdata_value_stop"
+            android:text="@string/stop_auto_randomise_getData_value"
+            />
         <TextView
             android:id="@+id/getData_value_label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:clickable="false"
             android:ems="10"

@@ -14,6 +14,8 @@
     <string name="loadButtonText">Load Data</string>
 <!--   AIDL Service    -->\
     <string name="aidl_service_title"><u>AIDL Service Control</u></string>
-    <string name="randomise_getData_value">Randomise getData() value</string>
+    <string name="manual_randomise_getData_value">Randomise Remote Service Data Value</string>
+    <string name="start_auto_randomise_getData_value">Start Automatic randomization of Remote Service Data value</string>
+    <string name="stop_auto_randomise_getData_value">Stop Automatic randomization of Remote Service Data value</string>
     <string name="current_getData_value">Remote Service Data = Initial Data</string>
 </resources>

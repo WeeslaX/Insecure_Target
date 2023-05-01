@@ -38,10 +38,12 @@ android {
 
     buildTypes {
         debug{
-            buildConfigField 'String', 'ENC_DB_NAME', "\"encryptedDatabase.db\""
+            buildConfigField 'String', 'SECURE_APP_PKG', "\"sg.cyber.secureapp.debug\""
+            buildConfigField 'String', 'SECURE_APP_RECEIVER', "\"sg.cyber.secureapp.receivers.AidlDataReceiver\""
         }
         release {
-            buildConfigField 'String', 'ENC_DB_NAME', "\"encryptedDatabase.db\""
+            buildConfigField 'String', 'SECURE_APP_PKG', "\"sg.cyber.secureapp.debug\""
+            buildConfigField 'String', 'SECURE_APP_RECEIVER', "\"sg.cyber.secureapp.receivers.AidlDataReceiver\""
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
