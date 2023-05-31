@@ -1,3 +1,3 @@
 # Insecure_Target
 
-Secure App - https://github.com/WeeslaX/secureApp
+Attacker App - https://github.com/WeeslaX/Attacker_App
