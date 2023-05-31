@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Insecure Target</string>
+    <string name="app_name">Target</string>
 <!--    Main Activity   -->
     <string name="main_activity_label"><u>Insecure Target Menu</u></string>
     <string name="unencrypted_btn"> Unencrypted Database Control</string>
