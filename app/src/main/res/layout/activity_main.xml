@@ -75,6 +75,20 @@
             android:text="@string/aidl_service_btn"
             />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:backgroundTint="@color/green"
+            android:id="@+id/local_socket_btn"
+            android:text="@string/local_socket_btn"
+            />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

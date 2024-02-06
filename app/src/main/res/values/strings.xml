@@ -5,6 +5,7 @@
     <string name="unencrypted_btn"> Unencrypted Database Control</string>
     <string name="encrypted_btn"> Encrypted Database Control</string>
     <string name="aidl_service_btn">AIDL Service Control</string>
+    <string name="local_socket_btn">Start and Monitor Local Socket Server</string>
 <!--    Database   -->
     <string name="unencrypted_db_title"><u>Unencrypted DB</u></string>
     <string name="encrypted_db_title"><u>Encrypted DB</u></string>
@@ -12,10 +13,13 @@
     <string name="heading">Content Provider In Android</string>
     <string name="insertButtontext">Insert Data</string>
     <string name="loadButtonText">Load Data</string>
-<!--   AIDL Service    -->\
+<!--   AIDL Service    -->
     <string name="aidl_service_title"><u>AIDL Service Control</u></string>
     <string name="manual_randomise_getData_value">Randomise Remote Service Data Value</string>
     <string name="start_auto_randomise_getData_value">Start Automatic randomization of Remote Service Data value</string>
     <string name="stop_auto_randomise_getData_value">Stop Automatic randomization of Remote Service Data value</string>
     <string name="current_getData_value">Remote Service Data = Initial Data</string>
+
+<!--   Local Socket    -->
+    <string name="local_socket_title"><u>Local Socket Logs</u></string>
 </resources>
