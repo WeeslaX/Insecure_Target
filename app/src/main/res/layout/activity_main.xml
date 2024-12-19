@@ -89,6 +89,20 @@
             android:text="@string/local_socket_btn"
             />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:backgroundTint="@color/yellow"
+            android:id="@+id/create_package_context_scanning"
+            android:text="@string/create_package_context_scanning_title"
+            />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

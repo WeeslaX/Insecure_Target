@@ -22,4 +22,7 @@
 
 <!--   Local Socket    -->
     <string name="local_socket_title"><u>Local Socket Logs</u></string>
+
+<!--   Create Package Context Scanning    -->
+    <string name="create_package_context_scanning_title"><u>Dynamic Code Loading</u></string>
 </resources>

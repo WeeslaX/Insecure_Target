@@ -32,7 +32,6 @@ android {
 
             v1SigningEnabled true
             v2SigningEnabled true
-
         }
     }
 
@@ -40,10 +39,12 @@ android {
         debug{
             buildConfigField 'String', 'SECURE_APP_PKG', "\"sg.cyber.secureapp.debug\""
             buildConfigField 'String', 'SECURE_APP_RECEIVER', "\"sg.cyber.secureapp.receivers.AidlDataReceiver\""
+            buildConfigField 'String', 'TARGET_PACKAGE_PREFIX_FOR_DCL', "\"com.attacker\""
         }
         release {
             buildConfigField 'String', 'SECURE_APP_PKG', "\"sg.cyber.secureapp.debug\""
             buildConfigField 'String', 'SECURE_APP_RECEIVER', "\"sg.cyber.secureapp.receivers.AidlDataReceiver\""
+            buildConfigField 'String', 'TARGET_PACKAGE_PREFIX_FOR_DCL', "\"com.attacker\""
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 

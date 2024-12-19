@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import sg.insecure.insecuretarget.util.CreatePackageContext;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Button encryptedButton = findViewById(R.id.encrypted_db_btn);
         Button aidlServiceButton = findViewById(R.id.aidl_service_btn);
         Button localSocketButton = findViewById(R.id.local_socket_btn);
+        Button createPackageContextScanningBtn = findViewById(R.id.create_package_context_scanning);
 
         // Transition to unencrypted database activity
         unencryptedButton.setOnClickListener(view ->{
@@ -56,10 +59,11 @@ public class MainActivity extends AppCompatActivity {
         localSocketButton.setOnClickListener(view->{
             startActivity(new Intent(this, LocalSocketActivity.class));
         });
+
+        createPackageContextScanningBtn.setOnClickListener(view->{
+            CreatePackageContext.scanAndLoadPackage(this, BuildConfig.TARGET_PACKAGE_PREFIX_FOR_DCL);
+        });
     }
-
-
-
 
     @Override
     protected void onDestroy() {
