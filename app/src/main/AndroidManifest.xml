@@ -49,6 +49,10 @@
         <activity android:name=".LocalSocketActivity"
             android:exported="false"/>
 
+        <activity android:name=".StrandhoggVulActivity"
+            android:exported="false"/>
+
+
         <provider
             android:name="sg.insecure.insecuretarget.database.DataProvider"
             android:authorities="sg.insecure.target.data.provider"

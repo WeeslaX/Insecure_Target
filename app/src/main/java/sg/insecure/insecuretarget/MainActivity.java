@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
         Button encryptedButton = findViewById(R.id.encrypted_db_btn);
         Button aidlServiceButton = findViewById(R.id.aidl_service_btn);
         Button localSocketButton = findViewById(R.id.local_socket_btn);
-        Button createPackageContextScanningBtn = findViewById(R.id.create_package_context_scanning);
+        Button createPackageContextScanningBtn = findViewById(R.id.create_package_context_scanning_btn);
+        Button strandhoggVulBtn = findViewById(R.id.strandhogg_vul_btn);
 
         // Transition to unencrypted database activity
         unencryptedButton.setOnClickListener(view ->{
@@ -62,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
 
         createPackageContextScanningBtn.setOnClickListener(view->{
             CreatePackageContext.scanAndLoadPackage(this, BuildConfig.TARGET_PACKAGE_PREFIX_FOR_DCL);
+        });
+
+        strandhoggVulBtn.setOnClickListener(view->{
+           startActivity(new Intent(this, StrandhoggVulActivity.class));
         });
     }
 

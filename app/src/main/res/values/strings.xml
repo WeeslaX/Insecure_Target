@@ -6,6 +6,9 @@
     <string name="encrypted_btn"> Encrypted Database Control</string>
     <string name="aidl_service_btn">AIDL Service Control</string>
     <string name="local_socket_btn">Start and Monitor Local Socket Server</string>
+    <string name="create_package_context_scanning_btn">Dynamic Code Loading</string>
+    <string name="strandhogg_vul_btn">Strandhogg Vulnerable Activity</string>
+
 <!--    Database   -->
     <string name="unencrypted_db_title"><u>Unencrypted DB</u></string>
     <string name="encrypted_db_title"><u>Encrypted DB</u></string>
@@ -23,6 +26,9 @@
 <!--   Local Socket    -->
     <string name="local_socket_title"><u>Local Socket Logs</u></string>
 
-<!--   Create Package Context Scanning    -->
-    <string name="create_package_context_scanning_title"><u>Dynamic Code Loading</u></string>
+<!--   StrandHogg    -->
+    <string name="strandhogg_vul_title"><u>StrandHogg Vul. Check</u></string>
+    <string name="legit_activity_message">This is a legitimate activity</string>
+    <string name="legit_activity_emoji">😊</string>
+
 </resources>
