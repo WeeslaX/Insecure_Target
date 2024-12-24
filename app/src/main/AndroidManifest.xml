@@ -50,7 +50,7 @@
             android:exported="false"/>
 
         <activity android:name=".StrandhoggVulActivity"
-            android:exported="false"/>
+            android:exported="true"/>
 
 
         <provider
