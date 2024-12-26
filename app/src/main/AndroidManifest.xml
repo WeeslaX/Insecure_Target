@@ -66,6 +66,13 @@
             android:readPermission="sg.insecure.target.data.provider.readPermission"
             />
 
+        <provider
+            android:name="sg.insecure.insecuretarget.database.TempAccessDatabase"
+            android:authorities="sg.insecure.target.data.provider.tempaccess"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            />
+
         <service
             android:name=".services.RemoteService"
             android:exported="true"

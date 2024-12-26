@@ -4,9 +4,14 @@ package sg.insecure.insecuretarget;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 import sg.insecure.insecuretarget.util.CreatePackageContext;
 
@@ -14,6 +19,7 @@ import sg.insecure.insecuretarget.util.CreatePackageContext;
 public class MainActivity extends AppCompatActivity {
 
     private static final int dangerousPermissionCode = 100;
+    private final String TAG = this.getClass().getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
         // Runtime Permission Request
         ActivityCompat.requestPermissions(this, neededPermission, dangerousPermissionCode);
         setContentView(R.layout.activity_main);
+
+        // Temp Access DB Vulnerability
+        if(BuildConfig.TEST_TEMPORARY_DB){
+            createSecretText();
+            setResult(RESULT_OK, getIntent());
+            finish();
+        }
     }
 
     @Override
@@ -74,4 +87,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
     }
+
+    /**
+     * Create secret_data.txt in Data directory (files folder)
+     */
+    public void createSecretText(){
+        // Create secret_data.txt in the app's private directory
+        String filename = "secret_data.txt";
+        String secretData = "This is some secret information.";
+
+        try (FileOutputStream fos = openFileOutput(filename, Context.MODE_PRIVATE)) {
+            fos.write(secretData.getBytes());
+        } catch (IOException e) {
+            Log.d(TAG, "Unable to create secret_data.txt. Error message: " + e.getMessage());
+        }
+    }
+
 }
